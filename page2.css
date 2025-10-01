@@ -1,0 +1,138 @@
+@keyframes flicker {
+
+    0%,
+    1% {
+        background: url(images/tv_static.jpg);
+    }
+
+    2%,
+    50% {
+        background: url(images/forest-entrance.png);
+        background-image: no-repeat;
+        background-size: cover;
+    }
+
+    51%,
+    52% {
+        background: url(images/tv_static.jpg);
+    }
+
+    53%,
+    99% {
+        background: url(images/forest-entrance.png);
+        background-image: no-repeat;
+        background-size: cover;
+    }
+
+    100% {
+        background: url(images/tv_static.jpg);
+    }
+}
+
+@keyframes moveImage {
+    0% {
+        left: 50px;
+    }
+    50% {
+        left: 90%;
+    }   
+    100% {
+        left: 50px;
+    }
+}
+
+body {
+    animation: flicker 2s;
+    animation-iteration-count: 5;
+    background: url(images/graveyard.jpg);
+    background-image: no-repeat;
+    background-size: cover;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Georgia;
+}
+
+header {
+    position: sticky;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(67, 67, 67);
+}
+
+header img {
+    height: 50px;
+    width: auto;
+    padding: 10px;
+}
+#m_zombie {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    animation: moveImage 10s ease-in-out infinite;
+}
+
+#content-main {
+    display: flex;
+}
+
+#button {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(117, 0, 0);
+    text-align: center;
+    width: 30%;
+    padding: 15px;
+    border: 3px solid rgb(117, 0, 0);
+    color: white;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#button:hover {
+    opacity: 0%;
+    transition: 1s all ease-in-out;
+}
+
+#blood-drip img {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 383px;
+    height: 130px;
+}
+
+#button-hover{
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(117, 0, 0);
+    text-align: center;
+    width: 30%;
+    padding: 15px;
+    border: 3px solid rgb(117, 0, 0);
+    color: white;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 3px;
+    background-color: rgb(73, 73, 73);
+    color: gray;
+}
+
