@@ -1,0 +1,179 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Background */
+  body {
+    font-family: 'Georgia', serif;
+    color: #f1f1f1;
+    background: url("graveyard.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Overlay */
+  .overlay {
+    background: rgba(0, 0, 0, 0.45);
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Fog effect */
+  .fog {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 200%;
+    height: 100%;
+    background: url("fog.png") repeat-x;
+    background-size: contain;
+    opacity: 0.5;
+    animation: moveFog 60s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes moveFog {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  
+  /* Header Banner */
+  .header-banner {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header-banner img {
+    width: 400px;
+    max-width: 80%;
+  }
+  
+  /* General Zombie Style */
+  .zombie {
+    position: absolute;
+    z-index: 3;
+    width: 200px;
+    opacity: 0;
+  }
+  
+  /* Main center zombie rising */
+  .zombie-center {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -200px;
+    animation: riseUp 4s ease-out forwards;
+  }
+  
+  @keyframes riseUp {
+    0%   { bottom: -200px; opacity: 0; }
+    50%  { opacity: 1; }
+    100% { bottom: 50px; opacity: 1; }
+  }
+  
+  /* Extra zombie clones rising */
+  .zombie-left {
+    left: 35%;
+    bottom: -220px;
+    animation: riseUp 5s ease-out forwards;
+    animation-delay: 1.5s;
+    transform: translateX(-50%);
+  }
+  
+  .zombie-right {
+    left: 65%;
+    bottom: -220px;
+    animation: riseUp 6s ease-out forwards;
+    animation-delay: 2.5s;
+    transform: translateX(-50%);
+  }
+  
+  /* Zombie 3 (side zombie rising) */
+  .zombie3-rise {
+    left: 30%;
+    bottom: -220px;
+    animation: riseUp 5s ease-out forwards;
+    animation-delay: 3s;
+    width: 220px;
+  }
+  
+  /* Zombie Hand crawling across bottom */
+  .zombie-hand {
+    bottom: 0;
+    left: -150px;
+    width: 150px;
+    position: absolute;
+    animation: crawl 15s linear infinite;
+  }
+  
+  @keyframes crawl {
+    from { left: -150px; }
+    to   { left: 100%; }
+  }
+  
+  /* Story Text */
+  .story-text {
+    position: relative;
+    margin-top: 320px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff5555;
+    font-family: 'Creepster', cursive;
+    text-shadow: 2px 2px 8px black;
+    z-index: 3;
+    opacity: 0.8;
+    animation: fadeOut 12s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0%   { opacity: 0.8; }
+    70%  { opacity: 0.8; }
+    100% { opacity: 0; }
+  }
+  
+  /* Next Button */
+  .next-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background: #222;
+    color: #fff;
+    border: 2px solid #888;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 3;
+    position: relative;
+  }
+  
+  .next-btn:hover {
+    background: #444;
+    border-color: #ccc;
+  }
+  
+  /* Back Sign */
+  .back-sign {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 3;
+  }
+  
+  .back-sign img {
+    width: 100px;
+    transition: transform 0.3s ease;
+  }
+  
+  .back-sign img:hover {
+    transform: scale(1.1);
+  }
