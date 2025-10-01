@@ -2,7 +2,7 @@
 
     0%,
     1% {
-        background: url(images/tv-static.gif);
+        background: url(images/tv_static.jpg);
     }
 
     2%,
@@ -14,7 +14,7 @@
 
     51%,
     52% {
-        background: url(images/tv-static.gif);
+        background: url(images/tv_static.jpg);
     }
 
     53%,
@@ -25,7 +25,19 @@
     }
 
     100% {
-        background: url(images/tv-static.gif);
+        background: url(images/tv_static.jpg);
+    }
+}
+
+@keyframes moveImage {
+    0% {
+        left: 50px;
+    }
+    50% {
+        left: 90%;
+    }   
+    100% {
+        left: 50px;
     }
 }
 
@@ -55,6 +67,12 @@ header img {
     height: 50px;
     width: auto;
     padding: 10px;
+}
+#m_zombie {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    animation: moveImage 10s ease-in-out infinite;
 }
 
 #content-main {
@@ -117,3 +135,4 @@ footer {
     background-color: rgb(73, 73, 73);
     color: gray;
 }
+
